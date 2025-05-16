@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Progress } from '@/components/ui/progress';
+import { cn } from '@/lib/utils';
 
 const Skills: React.FC = () => {
   const technicalSkills = [
@@ -40,7 +41,10 @@ const Skills: React.FC = () => {
                     <span className="font-medium text-navy">{skill.name}</span>
                     <span className="text-sm text-deepblue">{skill.level}%</span>
                   </div>
-                  <Progress value={skill.level} className="h-2" indicatorClassName="bg-deepblue" />
+                  <Progress 
+                    value={skill.level} 
+                    className={cn("h-2", "bg-secondary")}
+                  />
                 </div>
               ))}
             </div>
@@ -55,7 +59,10 @@ const Skills: React.FC = () => {
                     <span className="font-medium text-navy">{tool.name}</span>
                     <span className="text-sm text-deepblue">{tool.level}%</span>
                   </div>
-                  <Progress value={tool.level} className="h-2" indicatorClassName="bg-orange" />
+                  <Progress 
+                    value={tool.level} 
+                    className={cn("h-2", "bg-secondary")}
+                  />
                 </div>
               ))}
             </div>
