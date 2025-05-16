@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
                 </div>
                 
                 {/* Floating skill tags */}
-                <div className="absolute -left-6 bottom-1/4 py-2 px-4 shadow-lg animate-bounce border border-amber/20 transition-transform hover:-translate-y-1 rounded bg-lime-700 my-[10px]">
+                <div className="absolute -left-6 bottom-1/4 py-2 shadow-lg animate-bounce border border-amber/20 transition-transform hover:-translate-y-1 rounded bg-lime-700 my-[10px] px-[50px]">
                   <span className="font-medium text-darkGreen whitespace-nowrap">WordPress</span>
                 </div>
                 <div className="absolute -right-4 top-12 bg-cream py-2 px-4 rounded-full shadow-lg animate-bounce border border-amber/20" style={{
