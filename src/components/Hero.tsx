@@ -1,13 +1,10 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-
 const Hero: React.FC = () => {
-  return (
-    <section className="relative overflow-hidden py-24 lg:py-32 bg-cream">
+  return <section className="relative overflow-hidden py-24 lg:py-32 bg-cream">
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-amber/20 rounded-full filter blur-[100px] -translate-y-1/4 translate-x-1/4"></div>
@@ -19,22 +16,25 @@ const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-5 gap-12 items-center">
           <div className="lg:col-span-3 space-y-8">
             <div className="space-y-6 max-w-2xl">
-              <Badge 
-                variant="outline" 
-                className="bg-darkGreen/5 text-darkGreen border-darkGreen/10 py-1.5 px-4 text-sm font-medium rounded-full animate-fade-in"
-              >
+              <Badge variant="outline" className="bg-darkGreen/5 text-darkGreen border-darkGreen/10 py-1.5 px-4 text-sm font-medium rounded-full animate-fade-in">
                 Available for freelance work
               </Badge>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-darkGreen leading-tight animate-fade-in">
                 Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-olive to-copper">Shahin Parvej</span>
               </h1>
-              <p className="text-xl md:text-2xl font-medium text-olive/90 animate-fade-in" style={{ animationDelay: '150ms' }}>
+              <p className="text-xl md:text-2xl font-medium text-olive/90 animate-fade-in" style={{
+              animationDelay: '150ms'
+            }}>
                 Web Developer | PHP, Laravel & WordPress Specialist
               </p>
-              <p className="text-lg text-darkGreen/80 animate-fade-in" style={{ animationDelay: '300ms' }}>
+              <p className="text-lg text-darkGreen/80 animate-fade-in" style={{
+              animationDelay: '300ms'
+            }}>
                 I'm a recent B.Tech graduate passionate about building modern websites and managing IT infrastructure. I specialize in custom PHP, Laravel, and WordPress projects.
               </p>
-              <div className="flex flex-wrap gap-4 pt-2 animate-fade-in" style={{ animationDelay: '450ms' }}>
+              <div className="flex flex-wrap gap-4 pt-2 animate-fade-in" style={{
+              animationDelay: '450ms'
+            }}>
                 <Button asChild size="lg" className="bg-olive hover:bg-olive/90 text-cream transition-all shadow-lg hover:shadow-xl">
                   <Link to="/portfolio" className="flex items-center gap-2">
                     View Portfolio <ArrowRight size={18} />
@@ -47,7 +47,9 @@ const Hero: React.FC = () => {
                 </Button>
               </div>
 
-              <div className="flex items-center gap-6 pt-6 animate-fade-in" style={{ animationDelay: '600ms' }}>
+              <div className="flex items-center gap-6 pt-6 animate-fade-in" style={{
+              animationDelay: '600ms'
+            }}>
                 <span className="text-sm font-medium text-darkGreen/70">Find me on:</span>
                 <div className="flex gap-5">
                   <a href="https://linkedin.com/in/shahin-parvej" target="_blank" rel="noreferrer" className="text-olive hover:text-darkGreen transition-colors" aria-label="LinkedIn">
@@ -71,7 +73,9 @@ const Hero: React.FC = () => {
           </div>
           
           <div className="lg:col-span-2">
-            <div className="relative animate-fade-in" style={{ animationDelay: '300ms' }}>
+            <div className="relative animate-fade-in" style={{
+            animationDelay: '300ms'
+          }}>
               {/* Profile image with effects */}
               <div className="aspect-square relative max-w-md mx-auto lg:ml-auto">
                 {/* Decorative elements */}
@@ -81,21 +85,21 @@ const Hero: React.FC = () => {
                 
                 {/* Profile image container */}
                 <div className="relative z-10 w-full h-full rounded-full border-4 border-cream shadow-[0_0_25px_rgba(0,0,0,0.1)] overflow-hidden">
-                  <img 
-                    src="/placeholder.svg" 
-                    alt="Shahin Parvej"
-                    className="w-full h-full object-cover transition-all duration-700 hover:scale-110"
-                  />
+                  <img src="/placeholder.svg" alt="Shahin Parvej" className="w-full h-full object-cover transition-all duration-700 hover:scale-110" />
                 </div>
                 
                 {/* Floating skill tags */}
-                <div className="absolute -left-6 bottom-1/4 bg-cream py-2 px-4 rounded-full shadow-lg animate-bounce border border-amber/20 transition-transform hover:-translate-y-1">
+                <div className="absolute -left-6 bottom-1/4 bg-cream py-2 px-4 shadow-lg animate-bounce border border-amber/20 transition-transform hover:-translate-y-1 rounded-lg">
                   <span className="font-medium text-darkGreen whitespace-nowrap">WordPress</span>
                 </div>
-                <div className="absolute -right-4 top-12 bg-cream py-2 px-4 rounded-full shadow-lg animate-bounce border border-amber/20" style={{animationDelay: '0.6s'}}>
+                <div className="absolute -right-4 top-12 bg-cream py-2 px-4 rounded-full shadow-lg animate-bounce border border-amber/20" style={{
+                animationDelay: '0.6s'
+              }}>
                   <span className="font-medium text-darkGreen whitespace-nowrap">PHP</span>
                 </div>
-                <div className="absolute top-2/3 -left-8 bg-cream py-2 px-4 rounded-full shadow-lg animate-bounce border border-amber/20" style={{animationDelay: '1.2s'}}>
+                <div className="absolute top-2/3 -left-8 bg-cream py-2 px-4 rounded-full shadow-lg animate-bounce border border-amber/20" style={{
+                animationDelay: '1.2s'
+              }}>
                   <span className="font-medium text-darkGreen whitespace-nowrap">Laravel</span>
                 </div>
               </div>
@@ -103,8 +107,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
