@@ -1,5 +1,7 @@
 
 import React from 'react';
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -8,19 +10,40 @@ import { Phone, Mail, Linkedin, Github } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const { toast } = useToast();
-  
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    // This would normally send the form data to a server
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon!",
-    });
-    
-    // Reset form
-    (e.target as HTMLFormElement).reset();
-  };
+  const form = useRef<HTMLFormElement>(null);
+
+
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  if (form.current) {
+    emailjs
+      .sendForm(
+        'service_0hse5kd',       // Replace with your actual service ID
+        'template_527c1zf',      // Replace with your actual template ID
+        form.current,
+        'fo7u3zcPVKTY6OBrE'      // Replace with your actual public key
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message sent!",
+            description: "Thanks for reaching out. I'll get back to you soon!",
+          });
+          form.current?.reset();
+        },
+        (error) => {
+          toast({
+            title: "Error",
+            description: "Something went wrong. Please try again later.",
+            variant: "destructive",
+          });
+          console.error('EmailJS Error:', error);
+        }
+      );
+  }
+};
+
 
   return (
     <section id="contact" className="py-20 bg-white">
@@ -78,20 +101,20 @@ const Contact: React.FC = () => {
           </div>
           
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <form onSubmit={handleSubmit} className="space-y-6 bg-gray-50 p-6 rounded-lg shadow-md">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6 bg-gray-50 p-6 rounded-lg shadow-md">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-navy mb-1">Name</label>
-                <Input id="name" type="text" placeholder="Your name" required className="w-full" />
+                <Input id="name" name="name" type="text" placeholder="Your name" required className="w-full" />
               </div>
               
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-navy mb-1">Email</label>
-                <Input id="email" type="email" placeholder="Your email" required className="w-full" />
+                <Input id="email" name="email" type="email" placeholder="Your email" required className="w-full" />
               </div>
               
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-navy mb-1">Message</label>
-                <Textarea id="message" placeholder="Your message..." required className="w-full min-h-[150px]" />
+                <Textarea id="message" name="message" placeholder="Your message..." required className="w-full min-h-[150px]" />
               </div>
               
               <Button type="submit" className="bg-deepblue hover:bg-navy text-white w-full">
