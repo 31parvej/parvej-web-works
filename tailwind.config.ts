@@ -59,11 +59,11 @@ export default {
 				yellow: '#FFB703',
 				orange: '#FB8500',
 				// New color palette
-				olive: '#606C38',
-				darkGreen: '#283618',
-				cream: '#FEFAE0',
+				olive: '#556B2F',
+				darkGreen: '#2C5F2D',
+				cream: '#FFF9F0',
 				amber: '#DDA15E',
-				copper: '#BC6C25',
+				copper: '#B87333',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

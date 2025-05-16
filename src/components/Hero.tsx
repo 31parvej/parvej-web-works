@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
                 
                 {/* Profile image container */}
                 <div className="relative z-10 w-full h-full rounded-full border-4 border-cream shadow-[0_0_25px_rgba(0,0,0,0.1)] overflow-hidden">
-                  <img src="/placeholder.svg" alt="Shahin Parvej" className="w-full h-full object-cover transition-all duration-700 hover:scale-110" />
+                  <img src="/portfolio_parvej.jpg" alt="Shahin Parvej" className="w-full h-full object-cover transition-all duration-700 hover:scale-110" />
                 </div>
                 
                 {/* Floating skill tags */}
